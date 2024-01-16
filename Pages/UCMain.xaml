@@ -1,0 +1,153 @@
+﻿<UserControl x:Class="cademternetPro.Pages.UCMain"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:cademternetPro.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="401.238">
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local"></DockPanel>
+        <DockPanel Grid.Row="1" Height="40">
+            <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Right" Margin="0,5,18,5" Grid.Row="1" VerticalAlignment="Center" Width="123" Height="30" Click="btnSalir_Click" Cursor="Hand"/>
+        </DockPanel>
+        <ScrollViewer >
+            <TabControl x:Name="tabControl">
+                <TabItem Header="Cuadrículas Regionales">
+                    <Grid Background="#F7F8F8">
+                        <TabControl x:Name="tabControl1">
+                            <TabItem Header="Procesamiento">
+                                <Grid x:Name="gridProcesamiento" Background="#F7F8F8" Grid.Row="13" Grid.Column="2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="40"/>
+                                        <RowDefinition Height="30"/>
+
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="40"/>
+                                        <RowDefinition Height="40"/>
+                                        <RowDefinition Height="30"/>
+
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="40"/>
+                                        <RowDefinition Height="40"/>
+                                        <RowDefinition Height="40"/>
+
+                                        <RowDefinition Height="*"/>
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="60"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="label" Content="Configuración" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" FontWeight="Bold"/>
+                                    <TextBlock x:Name="label1" Text="Establecer la ubicación de los shapes de distritos" HorizontalAlignment="Stretch" Margin="15,0,0,0" Grid.Row="2" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                    <Label x:Name="label2" Content="Revisión de Información" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="4" VerticalAlignment="Center" FontWeight="Bold"/>
+                                    <TextBlock x:Name="label3" Text="Verificar estructura de directorios, shapefiles, campos, datos, etc." HorizontalAlignment="Stretch" Margin="15,0,0,0" Grid.Row="5" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                    <TextBlock x:Name="label4" Text="Verificar la existencia de polígonos flotantes" HorizontalAlignment="Left" Margin="15,0,0,0" Grid.Row="6" VerticalAlignment="Center"/>
+                                    <Label x:Name="label5" Content="Procesamiento" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="8" VerticalAlignment="Center" FontWeight="Bold"/>
+                                    <TextBlock x:Name="label6" Text="Tratamiento de insumos para la generación de las cuadrículas regionales" HorizontalAlignment="Stretch" Margin="15,0,0,0" Grid.Row="9" VerticalAlignment="Center" TextWrapping="Wrap" />
+                                    <TextBlock x:Name="label7" Text="Procesar información" HorizontalAlignment="Left" Margin="15,0,0,0" Grid.Row="10" VerticalAlignment="Center"/>
+                                    <TextBlock x:Name="label8" Text="Corrección de cuadrículas regionales" HorizontalAlignment="Left" Margin="15,0,0,0" Grid.Row="11" VerticalAlignment="Center"/>
+                                    <Image x:Name="image01Config" Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Width="25" Margin="0,0,0,0" Grid.Row="2" VerticalAlignment="Stretch"
+                                  Source="/cademternetPro;component/Images/tool.png" Cursor="Hand" MouseLeftButtonUp="image01Config_MouseLeftButtonUp" />
+                                    <Image x:Name="image02Structure" Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Width="25" Margin="0,0,0,0" Grid.Row="5" VerticalAlignment="Stretch"
+                                  Source="/cademternetPro;component/Images/tool.png" Cursor="Hand" MouseLeftButtonUp="image02Structure_MouseLeftButtonUp" />
+                                    <Image x:Name="image03FloatPol" Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Width="25" Margin="0,0,0,0" Grid.Row="6" VerticalAlignment="Stretch"
+                                  Source="/cademternetPro;component/Images/tool.png" Cursor="Hand" MouseLeftButtonUp="image03FloatPol_MouseLeftButtonUp" />
+                                    <Image x:Name="image04Cuad" Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Width="25" Margin="0,0,0,0" Grid.Row="9" VerticalAlignment="Stretch"
+                                  Source="/cademternetPro;component/Images/tool.png" Cursor="Hand" MouseLeftButtonUp="image04Cuad_MouseLeftButtonUp" />
+                                    <Image x:Name="image05ProcInfo" Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Width="25" Margin="0,0,0,0" Grid.Row="10" VerticalAlignment="Stretch"
+                                  Source="/cademternetPro;component/Images/tool.png" Cursor="Hand" MouseLeftButtonUp="image05ProcInfo_MouseLeftButtonUp" />
+                                    <Image x:Name="image06CorrectCuad" Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Width="25" Margin="0,0,0,0" Grid.Row="11" VerticalAlignment="Stretch"
+                                  Source="/cademternetPro;component/Images/tool.png" Cursor="Hand" MouseLeftButtonUp="image06CorrectCuad_MouseLeftButtonUp" />
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Verificación">
+                                <Grid Background="#F7F8F8"  Grid.Row="4" Grid.Column="3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="25"/>
+                                        <ColumnDefinition Width="25"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="10"/>
+                                        <RowDefinition Height="25"/>
+                                        <RowDefinition Height="10"/>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock x:Name="lblCarpeta" Text="Seleccione la carpeta donde están alojados los archivos shapefile"
+                                               HorizontalAlignment="Stretch"
+                                               Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                    <Button x:Name="openFolder"
+                                            Click="openFolder_Click" Grid.Row="1" Grid.Column="2" 
+                                            Background="Transparent" BorderBrush="Transparent">
+                                        <Image Source="/cademternetPro;component/Images/AbrirDirectorioDeDatosTemporales.png"></Image>
+                                    </Button>
+
+                                    <DataGrid x:Name="dgFolders" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" CanUserResizeColumns="False" CanUserResizeRows="False"
+                                              AutoGenerateColumns="False" CanUserAddRows="False">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Binding="{Binding Id}" Header="ID" Width="40" IsReadOnly="True"/>
+                                            <DataGridTextColumn Binding="{Binding Path}" Header="Path" Width="*" IsReadOnly="True"/>
+                                            <DataGridCheckBoxColumn Binding="{Binding Turn}" Header="Turn" Width="40" />
+                                            <DataGridTemplateColumn Header="Del" Width="40">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button BorderBrush="#FFa7bA" Background="#F8D7DA" Height="20" Click="Button_Click">
+                                                            <Image Source="/cademternetPro;component/Images/trash.png" />
+                                                        </Button>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+
+                                    <DataGrid x:Name="dgShapeFiles" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" CanUserResizeColumns="False" CanUserResizeRows="False"
+                                              AutoGenerateColumns="False" CanUserAddRows="False">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Binding="{Binding Parent}" Header="Parent" Width="45" IsReadOnly="True"/>
+                                            <DataGridTextColumn Binding="{Binding ShapeFile}" Header="ShapeFile" Width="*" IsReadOnly="True"/>
+                                            <DataGridCheckBoxColumn Binding="{Binding Turn}" Header="Turn" Width="40">
+                                                <DataGridCheckBoxColumn.CellStyle>
+                                                    <Style>
+                                                        <EventSetter Event="CheckBox.Checked" Handler="ShpOnChecked"/>
+                                                        <EventSetter Event="CheckBox.Unchecked" Handler="ShpOnUnchecked"/>
+                                                    </Style>
+                                                </DataGridCheckBoxColumn.CellStyle>
+                                            </DataGridCheckBoxColumn>
+
+                                            <DataGridTemplateColumn Header="Del" Width="40">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button  BorderBrush="#FF8888" Background="Transparent" Height="20" Click="Button_Click_1">
+                                                            <Image Source="/cademternetPro;component/Images/trash.png" />
+                                                        </Button>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+
+                                    </DataGrid>
+
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Cálculo de Porcentajes">
+                    <Grid Background="#F7F8F8">
+
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>

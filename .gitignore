@@ -1,0 +1,52 @@
+# Ignorar archivos de configuración de usuario de Visual Studio
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.vsp
+*.vspscc
+
+# Ignorar compilaciones binarias
+[Bb]in/
+[Oo]bj/
+[Ll]ogs/
+
+# Ignorar archivos de paquetes NuGet
+**/packages/*
+# Descomenta la siguiente línea si deseas rastrear los paquetes NuGet
+#!**/packages/repositories.config
+
+# Ignorar archivos temporales y de respaldo
+*.[Bb]ak
+*.[Tt]mp
+*.[Ll]og
+
+# Ignorar archivos específicos de ArcGIS Pro Add-in
+*.esriAddinX
+
+# Ignorar archivos de depuración y símbolos
+*.pdb
+*.opendb
+
+# Ignorar archivos de salida de la documentación
+[Oo]bj/
+[Bb]in/Debug/**/publish/
+
+# Otras carpetas y archivos comunes a ignorar
+node_modules/
+jspm_packages/
+bower_components/
+dist/
+.staging/
+temp/
+*.cache
+*.swp
+.DS_Store
+
+# Ignorar archivos específicos de proyectos C#
+*.csproj
+*.resharper
+*.ncrunch*
+*.sln
+*.csproj.user

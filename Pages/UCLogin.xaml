@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="cademternetPro.Pages.UCLogin"             
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:cademternetPro.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="250">
+    <Grid>
+        <TextBox x:Name="tbUsuario" HorizontalAlignment="Center" Margin="0,73,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Usuario" VerticalAlignment="Top" Width="162" Height="24"/>
+        <Button x:Name="btnLogin" Content="Ingresar" HorizontalAlignment="Center" Margin="0,147,0,0" Grid.Row="1" VerticalAlignment="Top" Width="162" Height="27" Click="btnLogin_Click"/>
+        <Label x:Name="label1" Content="Login" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,18,0,0" Grid.Row="1" VerticalAlignment="Top" Width="97" FontWeight="Bold" FontSize="24"/>
+
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Center" Margin="0,108,0,0" Grid.Row="1" VerticalAlignment="Top" Width="162" MaxLength="25" PasswordChar="*" Password="password" Height="24"/>
+        <Image x:Name="imageGif" Margin="100,188,100,112" Width="50" Height="50"
+               Grid.Row="1" VerticalAlignment="Top"
+               gif:AnimationBehavior.SourceUri="/cademternetPro;component/Images/loading.gif" 
+               IsHitTestVisible="False" Visibility="Hidden"/>
+
+    </Grid>
+</UserControl>

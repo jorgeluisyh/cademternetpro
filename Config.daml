@@ -1,0 +1,47 @@
+﻿<ArcGIS defaultAssembly="cademternetPro.dll" defaultNamespace="cademternetPro" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{3fcb83a9-1648-4db2-9c5b-6405d9518b4a}" version="1.0" desktopVersion="3.1.41833">
+    <Name>cademternetPro</Name>
+    <Description>cademternetPro description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>jyupanqui</Author>
+    <Company>Acme</Company>
+    <Date>16/11/2023 16:25:09</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="cademternetPro_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="cademternetPro_Tab1" caption="New Tab">
+          <group refID="cademternetPro_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="cademternetPro_Group1" caption="Grupo Cademternet" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="cademternetPro_DockpaneMain_ShowButton" size="large" />
+          <button refID="cademternetPro_Pages_ProWindow1" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="cademternetPro_DockpaneMain_ShowButton" caption="Actualizar Demarcación" className="DockpaneMain_ShowButton" loadOnClick="true" smallImage="Images/logo_ingemmet_daml.png" largeImage="Images/peru_128.png">
+          <tooltip heading="Show Dockpane">
+            Actualizar Demarcación<disabledText /></tooltip>
+        </button>
+        <button id="cademternetPro_Pages_ProWindow1" caption="ProWindow 1" className="cademternetPro.Pages.ShowProWindow1" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="cademternetPro_DockpaneMain" caption="Actualizar Demarcación" className="DockpaneMainViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="DockpaneMainView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>
