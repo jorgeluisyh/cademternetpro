@@ -96,7 +96,15 @@
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Binding="{Binding Id}" Header="ID" Width="40" IsReadOnly="True"/>
                                             <DataGridTextColumn Binding="{Binding Path}" Header="Path" Width="*" IsReadOnly="True"/>
-                                            <DataGridCheckBoxColumn Binding="{Binding Turn}" Header="Turn" Width="40" />
+                                            <DataGridTemplateColumn Header="Turn" Width="40">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <!--Se agrega la propiedad UpdateSourceTrigger para ejecutar los cambios con notifychanged-->
+                                                        <CheckBox IsChecked="{Binding Turn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Center" Checked="CheckBox_Checked_1" Unchecked="CheckBox_Unchecked_1" ></CheckBox>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                            
                                             <DataGridTemplateColumn Header="Del" Width="40">
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
@@ -114,14 +122,14 @@
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Binding="{Binding Parent}" Header="Parent" Width="45" IsReadOnly="True"/>
                                             <DataGridTextColumn Binding="{Binding ShapeFile}" Header="ShapeFile" Width="*" IsReadOnly="True"/>
-                                            <DataGridCheckBoxColumn Binding="{Binding Turn}" Header="Turn" Width="40">
-                                                <DataGridCheckBoxColumn.CellStyle>
-                                                    <Style>
-                                                        <EventSetter Event="CheckBox.Checked" Handler="ShpOnChecked"/>
-                                                        <EventSetter Event="CheckBox.Unchecked" Handler="ShpOnUnchecked"/>
-                                                    </Style>
-                                                </DataGridCheckBoxColumn.CellStyle>
-                                            </DataGridCheckBoxColumn>
+                                            <DataGridTemplateColumn Header="Turn" Width="40">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <!--Se agrega la propiedad UpdateSourceTrigger para ejecutar los cambios con notifychanged-->
+                                                        <CheckBox IsChecked="{Binding Turn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Checked="CheckBox_Checked" HorizontalAlignment="Center" Unchecked="CheckBox_Unchecked"></CheckBox>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>                             
 
                                             <DataGridTemplateColumn Header="Del" Width="40">
                                                 <DataGridTemplateColumn.CellTemplate>

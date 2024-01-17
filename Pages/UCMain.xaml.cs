@@ -100,7 +100,7 @@ namespace cademternetPro.Pages
             var item = openItemDialog.Items.First();
             string path = item.Path;
             int ident = dgFolders.Items.Count +1;
-            _folderrows.Add(new FolderRow { Id= ident.ToString(), Path= path, Turn=false });
+            _folderrows.Add(new FolderRow { Id= ident.ToString(), Path= path, Turn=true });
             //foreach(FolderRow row in folderrows)
             //{
             //    dgFolders.Items.Add(row);   
@@ -127,30 +127,71 @@ namespace cademternetPro.Pages
 
             if (rowData != null)
             {
+                
                 _folderrows.Remove(rowData);
+                
             }
+            //Permite setear elemento de shapefile a falso lo que hará que se quite de la tabla de contenidos
+            foreach( var row in _shapefilerows )
+            {
+                if(row.Parent == rowData.Id) { row.Turn = false; }
+            }
+            //Quita los elementos de la grilla por coincidencia con el padre
             _shapefilerows.RemoveAll(row => row.Parent == rowData.Id);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            var rowData = button.DataContext as ShapefileRow;
+            var rowData = button.DataContext as ShapefileRow;            
             
             if (rowData != null)
             {
+                // Antes de eliminar el dato, lo setea a falso para que se ejecute el geoproceso y lo quite de la toc
+                rowData.Turn = false;
+                
                 _shapefilerows.Remove(rowData);
             }
         }
-        void ShpOnChecked(object sender, RoutedEventArgs e)
+
+        private async void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Checked");
+            var checkbox = sender as CheckBox;
+            var rowData = checkbox.DataContext as ShapefileRow;
+
+            if (rowData != null) 
+            {
+                int ident = Int32.Parse(rowData.Parent);
+                string path_folder = _folderrows.Where(row => row.Id == ident.ToString()).First().Path;
+                string path_shape = path_folder + @"/" + rowData.ShapeFile;
+                parameters.Clear();
+                parameters.Add(path_shape);
+                await ExecuteGP(_tool_00_c_agregarshapefiletoc, parameters, null, false);
+            }
         }
-        void ShpOnUnchecked(object sender, RoutedEventArgs e)
+
+        private async void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Unchecked");
+            var checkbox = sender as CheckBox;
+            var rowData = checkbox.DataContext as ShapefileRow;
+            string nameLayer = rowData.ShapeFile.Split(".")[0];
+            parameters.Clear();
+            parameters.Add(nameLayer);
+            await ExecuteGP(_tool_00_d_removershapefiletoc, parameters, null, false);
         }
-        
+
+        private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
+        {
+            // NO se encuentra implementado aún
+        }
+
+        private void CheckBox_Unchecked_1(object sender, RoutedEventArgs e)
+        {
+            // NO se encuentra implementado aún
+
+        }
+
+
     }
 }
 

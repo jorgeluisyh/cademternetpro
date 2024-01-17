@@ -30,6 +30,9 @@ namespace cademternetPro
         //Tools ExecuteGP
         public static string _tool_00_a_habilitarValidator = "habilitarValidator";
         public static string _tool_00_b_listarshapefiles = "listarshapefiles";
+        public static string _tool_00_c_agregarshapefiletoc = "agregarshapefiletoc";
+        public static string _tool_00_d_removershapefiletoc = "removershapefiletoc";
+
 
         public static List<object> parameters = new List<object>();
         public static string GPToolDialog(string tool, bool modal = false, string tbxpath = null)
